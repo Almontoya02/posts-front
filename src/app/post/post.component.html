@@ -1,0 +1,43 @@
+<div class="containerpost">
+    <h6>
+        <b>By: {{autor}}</b>
+        <hr>
+    </h6>
+    
+    <h5>
+        <b>{{title}}</b>
+    </h5>
+    <p>
+    {{body}}
+   </p>
+   <div>
+    <div *ngIf="this.img==''"></div>
+    <img *ngIf='this.img!=""' src={{img}} alt="">
+    <p><b>{{date}}</b></p>
+   </div>
+   <div class="containericons">
+    
+    <div class="row">
+        <div class="col">
+            <div class="button">
+                <img src="../../assets/like.svg" alt="">
+                <h6>Like</h6>
+            </div>
+        </div>
+        <div class="col">
+            <div class="button">
+                <img src="../../assets/comments.svg" alt="">
+                <h6>Comments</h6>
+            </div>
+        </div>
+        <div class="col">
+            <div class="button">
+                <img src="../../assets/share.svg" alt="">
+                <h6>Share</h6>
+            </div>
+        </div>
+    </div>
+    
+   </div>
+</div>
+br

@@ -1,0 +1,33 @@
+.icon{
+    position: absolute;
+    z-index: 100;
+    width: 25px;
+    height: 25px;
+}
+
+.input-group-text{
+    width: 40px !important;
+    background-color: #EDEDED;
+    border: transparent;
+    border-radius: 20px;
+    
+}
+.input-group{
+    width: 22vw !important;
+    height: 45px !important;
+    background-color: #EDEDED !important;
+    border: transparent !important;
+    border-radius: 20px !important;
+    outline: none;
+}
+.input:focus{
+
+    outline: none !important;
+}
+.input{
+    width: 200px !important;
+    background-color: #EDEDED !important;
+    border: transparent !important;
+    border-radius: 20px !important;
+
+}

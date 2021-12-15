@@ -1,0 +1,28 @@
+<div class="container-full">
+    <div class="row widthrow">
+        <div class="col-4 centercol">
+    
+        </div>
+        <div class="col-4 centercol">
+            
+            <div class="mainInputs">
+    
+                <h2 >Registrarse</h2>
+                <div class="inputsdata">
+                    <app-input ngDefaultControl [(ngModel)]="userEmail" [placeHolder]='"Correo electronico"' [img]="'../../assets/email.svg'"  [inputType]="'email'"></app-input>
+                    <app-input ngDefaultControl [(ngModel)]="userName" [placeHolder]='"Nickname"' [img]="'../../assets/user-icon.svg'"  [inputType]="'text'"></app-input>
+                    <app-input ngDefaultControl [(ngModel)]="userPassword" [placeHolder]='"Contraseña"' [img]="'../../assets/password.svg'"  [inputType]="'password'"></app-input>
+                </div>
+                <div class="centercol2">
+                    <app-btn-principal [name]="'Registrarse'" (buttonSelected)="onUserNameCreate()"></app-btn-principal>
+
+    
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+        
+        </div>
+        
+    </div>    
+</div>

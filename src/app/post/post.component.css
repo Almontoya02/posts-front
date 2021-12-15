@@ -1,0 +1,41 @@
+.containerpost{
+    display: flex;
+    width: 40vw;
+    height: auto;
+    background-color: rgb(36, 37, 38);
+    color: white;
+    padding: 1.5vw;
+    border-radius: 2vh;
+    flex-direction: column;
+    gap: 2vh;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    width: 10vw;
+    height: 5vh;
+}
+p > b{
+    font-size: 1.8vh;
+}
+.button:hover{
+    background-color: rgb(75, 75, 75);
+    border-radius: 1vh;
+}
+.button > img{
+    width: 3.5vw;
+    height: 3.5vh;
+}
+
+img{
+    width: 37vw;
+    height: 35vh;
+    border-radius: 1vh;
+}
+h5{
+
+    align-self: center;
+}

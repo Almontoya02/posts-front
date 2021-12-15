@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark zindex">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/logo.png" width="150vw" height="30" class="d-inline-block align-top" alt="">
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+            <button class="btn btn-danger" (click)="signOut()">Cerrar sesión</button>
+        </form>
+      </div>
+    </div>
+</nav>
+<div class="colcenter">
+    
+        <div class="row widthrow">
+            <div class="col-3">
+    
+            </div>
+            <div class="col-6 containermain ">
+                <div class="container-addpost">
+                    <h6>Agrega un nuevo post:</h6>
+                    <div class="divadd" (click)="open(content)">
+                      <img class="add" src="../../assets/add.svg" alt="">
+                      <div class="input-group mb-3">
+                        <input type="text"  class="form-control input" placeholder="what's on your mind?"  aria-describedby="basic-addon1">
+                    </div>
+                    </div>
+
+                </div>
+                <div class="overflow-auto2 scroll">
+                  <br>
+
+
+                    <app-post *ngFor="let post of this.postService.listPosts" [img]="post.imageUrl" [title]="post.title" [body]="post.body" [autor]="post.creatorNickname" [date]="this.convertToDate(post.date)"></app-post>
+
+                </div>
+
+            </div>
+            <div class="col-3">
+    
+            </div>
+        </div>
+        <ng-template #content let-modal class="modalContainer">
+            <div class="modal-header modalcolor">
+              <div class="modalheadercontent">
+                <h4 class="modal-title" id="modal-basic-title">Create post</h4>
+                <img  width="30vw" height="30vh" (click)="this.closeModal(content)" class="pointer" src="../../assets/close.svg" alt="">
+              </div>
+            </div>
+            <div class="modal-body modalcolor">
+              <div class="modalbodycontent">
+                <div class="columntitle">
+                  <h5>Title:</h5>
+                  <input  ngDefaultControl [(ngModel)]="title" type="text" class="titlePost" placeholder="Title">
+                </div>
+
+                <textarea ngDefaultControl [(ngModel)]="body" class="textBody" aria-label="With textarea" placeholder="What's on your mind?"></textarea>
+                <div *ngIf="this.uploadUrl==''"></div>
+                <img *ngIf="this.uploadUrl!=''" class="imgupload" src={{uploadUrl}} alt="">
+                <div class="addfile" type=> 
+                    <h5><b>Add your Image</b></h5>
+                    <input type="file" class="file" (change)="uploadFile($event)" oninput="" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;" />
+                    <img class="" width="40vw" height="40vh" src="../../assets/imgfile.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer modalcolor">
+              <button type="button" class="btn btn-primary btnpost" (click)="createPostDefinilly()"><b>Post</b></button>
+           </div>
+        </ng-template>
+          
+   
+</div>  
+
+
+
+
+
+
+
+
+
