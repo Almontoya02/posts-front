@@ -30,7 +30,7 @@
     
         <div class="row widthrow">
             <div class="col-3">
-    
+              <app-user-info [nickname]="nicknameicon" (buttonSelected)="gotoUpdate()"  [imgUrl]="this.userService.imageUrl"></app-user-info>
             </div>
             <div class="col-6 containermain ">
                 <div class="container-addpost">

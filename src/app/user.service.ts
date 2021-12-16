@@ -12,6 +12,7 @@ export class UserService {
   email: string="";
   token: string = "";
   userPassword: string = ""
+  imageUrl=""
   postService:PostService
   httpClient:HttpClient
   constructor(httpClient:HttpClient,postService:PostService) { 
@@ -78,5 +79,44 @@ export class UserService {
     this.nickName=""
     this.token=""
     this.postService.listPosts=[]
+    this.imageUrl=""
   }
+
+  async getInfoUserRequest(nickname: string){
+    const data = await this.httpClient.get("http://localhost:4001/user/"+nickname).toPromise();
+    console.log(data)
+    const json = JSON.parse(JSON.stringify(data))
+    return {status:json["status"],message:json["message"],data:json["data"]}
+  }
+
+  async getInfoUser(nickname: any){
+    const user = await this.getInfoUserRequest(nickname)
+    this.imageUrl=user.data.user.imageUrl
+    this.nickName=user.data.user.nickname
+    this.email=user.data.user.email
+    console.log("IMAGEN USER: ",this.imageUrl)
+  }
+
+  async updateImgRequest(nickname: string,imageUrl:string){
+    const data = await this.httpClient.patch("http://localhost:4001/user/update",{
+      nickname,
+      imageUrl
+    }).toPromise();
+    console.log(data)
+    const json = JSON.parse(JSON.stringify(data))
+    return {status:json["status"],message:json["message"],data:json["data"]}
+  }
+
+  async updateImg(nickname: any,imageUrl:string){
+    const user = await this.updateImgRequest(nickname,imageUrl)
+    this.imageUrl=user.data.user.imageUrl
+
+    if(user.status==true){
+      return true
+    }
+    return false
+  }
+
+
+
 }

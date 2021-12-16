@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   uploadUrl:any = "" 
   currentFile:any=""
   storage: AngularFireStorage
-
+  nicknameicon:any=""
   postService:PostService
   userService:UserService
   router:Router
@@ -42,6 +42,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     console.log("CURRENT INICIO",this.currentFile)
     this.postService.getAllChats(localStorage.getItem("email"),localStorage.getItem("token"),localStorage.getItem("nickname"))
+    this.userService.getInfoUser(localStorage.getItem("nickname"))
+    this.nicknameicon=localStorage.getItem("nickname")
   }
 
   openModal(modal:any){
@@ -136,6 +138,9 @@ export class DashboardComponent implements OnInit {
 
         })
     })
-}
+  }
 
+  gotoUpdate(){
+    this.router.navigateByUrl('/user/'+localStorage.getItem("nickname"));
+  }
 }

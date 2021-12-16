@@ -18,6 +18,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { InputImageComponent } from './input-image/input-image.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireModule } from '@angular/fire/compat';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AngularFireModule } from '@angular/fire/compat';
     RegisterPageComponent,
     DashboardComponent,
     PostComponent,
-    InputImageComponent
+    InputImageComponent,
+    UserInfoComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
