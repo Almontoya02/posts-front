@@ -65,15 +65,15 @@
     border-radius: 2vh;
 }
 .overflow-auto2::-webkit-scrollbar {
-    scrollbar-color: red !important;
+    -webkit-appearance: none;
 }
-.overflow-auto2::-webkit-scrollbar-track {
-    border-radius: 10px !important;  
+.overflow-auto2::-webkit-scrollbar:vertical {
+    width:10px;
 }
 .overflow-auto2::-webkit-scrollbar-thumb {
-    background-color: #797979;
+    background-color: rgb(36, 37, 38);
     border-radius: 20px;
-    border: 2px solid #f1f2f3;
+    border: 1px solid rgb(36, 37, 38);
 }
 .overflow-auto2::-webkit-scrollbar:horizontal {
     height: 10px;
