@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { LoginPageComponent } from './Components/login-page/login-page.component';
+import { RegisterPageComponent } from './Components/register-page/register-page.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 const routes: Routes = [
   {
@@ -15,10 +15,10 @@ const routes: Routes = [
     path:"login",
     component: LoginPageComponent,
   },
-  {
-    path:"register",
-    component: RegisterPageComponent,
-  },
+    {
+      path:"register",
+      component: RegisterPageComponent,
+    },
   {
     path:"dashboard",
     component: DashboardComponent,

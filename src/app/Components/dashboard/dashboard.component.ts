@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostService } from '../post.service';
-import { UserService } from '../user.service';
+import { PostService } from '../../Services/post.service';
+import { UserService } from '../../Services/user.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 

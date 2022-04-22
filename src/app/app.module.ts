@@ -5,21 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { InputComponent } from './input/input.component';
-import { BtnPrincipalComponent } from './btn-principal/btn-principal.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginPageComponent } from './Components/login-page/login-page.component';
+import { InputComponent } from './Components/input/input.component';
+import { BtnPrincipalComponent } from './Components/btn-principal/btn-principal.component';
+import { RegisterPageComponent } from './Components/register-page/register-page.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PostComponent } from './post/post.component';
+import { PostComponent } from './Components/post/post.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { InputImageComponent } from './input-image/input-image.component';
+import { InputImageComponent } from './Components/input-image/input-image.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireModule } from '@angular/fire/compat';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { UserInfoComponent } from './Components/user-info/user-info.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
